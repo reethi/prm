@@ -1,0 +1,142 @@
+//CSS for Page loading Image ------>Start
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+    position: fixed;
+    left: 0%;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url('../../images/Preloader_3.gif') center no-repeat #FFF;
+    transition: opacity 400ms ease-in;
+}
+//CSS for Page loading Image ------>End
+
+//CSS for Modal ------>Start
+.modalDialog:target {
+  opacity:1;
+  pointer-events: auto;
+}
+
+.modalDialog > div {
+  width: 400px;
+  position: relative;
+  margin: 19% auto;
+  border-radius: 0px;
+  background: #fff;
+  /*background: -moz-linear-gradient(#fff, #999);
+  background: -webkit-linear-gradient(#fff, #999);
+  background: -o-linear-gradient(#fff, #999); */
+}
+
+
+.modalDialog {
+  position: fixed;
+  font-family: Arial, Helvetica, sans-serif;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,0.8);
+  z-index: 99999;
+  opacity:0;
+  -webkit-transition: opacity 400ms ease-in;
+  -moz-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+  pointer-events: none;
+}
+
+
+.td-border{
+border: 1px solid #DDD;
+}
+.td-background{
+    background-color:rgba(136, 137, 136, 1);
+    color:#fff !important;
+    font-weight:bold;
+}
+.modal-box {
+  display: none;
+  position: absolute;
+  z-index: 1000;
+  width: 98%;
+  background: white;
+  border-bottom: 1px solid #aaa;
+  border-radius: 4px;
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-clip: padding-box;
+}
+ 
+.modal-box header,
+.modal-box .modal-header {
+  padding: 1.25em 1.5em;
+  border-bottom: 1px solid #ddd;
+}
+ 
+.modal-box header h3,
+.modal-box header h4,
+.modal-box .modal-header h3,
+.modal-box .modal-header h4 { margin: 0; }
+ 
+.modal-box .modal-body { padding: 2em 1.5em; }
+ 
+.modal-box footer,
+.modal-box .modal-footer {
+  padding: 1em;
+  border-top: 1px solid #ddd;
+  background: rgba(0, 0, 0, 0.02);
+  text-align: right;
+}
+ 
+.modal-overlay {
+  opacity: 5 !important;
+  filter: alpha(opacity=0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 900;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3) !important;
+}
+ 
+a.close {
+  line-height: 1;
+  font-size: 2em;
+  position: absolute;
+  top: 1%;
+  right: 2%;
+  text-decoration: none;
+  color: #bbb;
+}
+
+a.close1{
+  line-height: 1;
+font-size: 1.5em;
+position: absolute;
+top: 12%;
+right: 8%;
+text-decoration: none;
+color: #000;
+}
+ 
+a.close:hover {
+  color: #222;
+  -webkit-transition: color 1s ease;
+  -moz-transition: color 1s ease;
+  transition: color 1s ease;
+}
+@media (min-width: 32em) {
+  .modal-box { width: 70%; }
+}
+.btn {
+    background-color:blue;
+}
+
+
+#participants_table thead th.sorting_desc, #participants_table thead th.sorting_asc{
+  background-image: none !important;
+}
+//CSS for Modal Box ------>End

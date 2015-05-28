@@ -1,0 +1,306 @@
+/* Everything but the jumbotron gets side spacing for mobile-first views */
+.masthead,
+.body-content,
+.footer {
+   padding-left: 15px;
+   padding-right: 15px;
+}
+.masthead {
+   margin-bottom: 32px;
+}
+.body-content {
+   margin-top: 140px;
+   min-height: 500px;
+}
+
+.footer {
+   padding-bottom: 30px;
+}
+.logo {
+    width: 120px;
+}
+.nav {
+   margin-top: 6px;
+}
+.carriers {
+   margin-bottom: 60px;
+   margin-top: 30px;
+   margin-right: auto;
+   margin-left: auto;
+   text-align: center;
+}
+.carriers img {
+   margin: 0 10px;
+   /*-webkit-filter: grayscale(1);
+   -moz-filter: grayscale(1);
+   filter: grayscale(1);*/
+   /*opacity: 0.5;*/
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+   /* Remove the padding we set earlier */
+   .masthead,
+   .marketing,
+   .footer {
+      padding-left: 0;
+      padding-right: 0;
+   }
+}
+
+#coverage-level-modal .modal-body {
+   max-height: 400px;
+   overflow: auto;
+}
+#coverage-level-modal .modal-footer {
+   font-size: 10px;
+}
+
+/* Typeahead */
+.twitter-typeahead {
+   width: 100%;
+}
+.twitter-typeahead .tt-query,
+.twitter-typeahead .tt-hint {
+margin-bottom: 0;
+}
+.tt-dropdown-menu {
+   min-width: 160px;
+   margin-top: 2px;
+   padding: 5px 0;
+   background-color: #fff;
+   border: 1px solid #ccc;
+   border: 1px solid rgba(0,0,0,.2);
+   *border-right-width: 2px;
+   *border-bottom-width: 2px;
+   -webkit-border-radius: 6px;
+   -moz-border-radius: 6px;
+   border-radius: 6px;
+   -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+   -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+   box-shadow: 0 5px 10px rgba(0,0,0,.2);
+   -webkit-background-clip: padding-box;
+   -moz-background-clip: padding;
+   background-clip: padding-box;
+}
+.tt-suggestion {
+   display: block;
+   padding: 3px 20px;
+}
+.tt-suggestion.tt-is-under-cursor {
+   color: #fff;
+   background-color: #0081c2;
+   background-image: -moz-linear-gradient(top, #0088cc, #0077b3);
+   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0077b3));
+   background-image: -webkit-linear-gradient(top, #0088cc, #0077b3);
+   background-image: -o-linear-gradient(top, #0088cc, #0077b3);
+   background-image: linear-gradient(to bottom, #0088cc, #0077b3);
+   background-repeat: repeat-x;
+   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0)
+}
+.tt-suggestion.tt-is-under-cursor a {
+   color: #fff;
+}
+.tt-suggestion p {
+   margin: 0;
+}
+.tt-hint {
+   display: none;
+}
+
+.list-group-item {
+   border: none;
+}
+
+.panel form {
+   border-bottom: 1px solid #dedede;
+   padding-bottom: 20px;
+}
+.panel form.signup {
+   border-bottom: 0;
+   padding-bottom: 0;
+}
+.panel .btn-group {
+   width: 100%;
+}
+.panel .plans .btn {
+   width: 25%;
+}
+.panel form .ownership .btn, .panel form .use .btn {
+   width: 33.33%;
+}
+.panel form .miles .btn {
+   width: 25%;
+}
+.panel form .gender .btn {
+   width: 50%;
+}
+form#edit-zip-form {
+   margin-bottom: 10px;
+}
+.panel form .is_primary {
+   width: 55px;
+   margin-bottom: 0;
+}
+.driver-name {
+   line-height: 28px;
+}
+.panel .list-group {
+   margin-bottom: 0;
+}
+
+.insurance {
+   position: relative;
+}
+.insurance-gutter {
+   position: absolute;
+   top: 0;
+}
+.insurance-gutter.fixed {
+   position: fixed;
+   top: 110px;
+}
+.insurance-gutter.fixed .progress {
+   margin-top: 12px;
+}
+
+body.modal-open {
+   margin-right: 0;
+}
+
+.progress .popover {
+   color: #000;
+}
+
+.coverage {
+   display: none;
+   font-size: 11px;
+}
+.note {
+   font-size: 10px;
+}
+
+.ng-table .header {
+   text-align: left;
+}
+div.pagination {
+   display: block;
+}
+div.pagination ul.pagination {
+   margin: 0;
+}
+
+div.trust-badge {
+   margin-bottom: 48px;
+}
+
+.progress {
+   height: 24px;
+   /*position: fixed;*/
+   top: 100px;
+   width: 878px;
+   z-index: 9999;
+}
+.progress-bar {
+   font-size: 16px;
+}
+
+.insurance-gutter h2 {
+   margin-top: 0;
+}
+
+footer a {
+   color: #fff;
+}
+
+.sticky-progress {
+   top: 80px;
+}
+
+.overlay-tip {
+   background-color: #333;
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   z-index: 1;
+   opacity: 0.8;
+   left: 0;
+   top: 0;
+}
+.overlay-tip img {
+   margin-left: 50%;
+   margin-top: 234px;
+   position: fixed;
+}
+.overlay-tip-actions {
+   position: relative;
+   z-index: 2;
+}
+.bg_backgroud_gray{
+    background-color: rgba(225,225,225,.8) !important;
+}
+.landing_page_jumbotron{
+   padding: 3% 0;
+   background-color: #525e63;
+}
+
+.tag_line{
+   color: #FFF; 
+   font-size:36px; 
+   font-family:'Source Sans Pro', Helvetica, Arial, Sans-serif;
+}
+
+.tag_content{
+   color: #95A5A6; 
+   font-size:22px; 
+}
+
+.bullet_style{
+   color: #aaa;
+   font-size: 18px;
+   font-family:'Source Sans Pro', Helvetica, Arial, Sans-serif;
+}
+
+.learn_plan_ask{
+   color : #000;
+}
+
+.learn_page_body{
+   padding: 30px 0 0 50px;
+}
+
+.suggessions_landing_body{
+   padding: 40px 0 90px 120px;
+}
+
+.blog_home{
+   border-bottom: 1px solid #EEE; 
+   padding-bottom: 20px;
+}
+
+.blog_iframe{
+   padding: 50px 0 0 100px;
+   height:10000px;
+}
+
+.act_div_window{
+   height: 200px;
+}
+
+
+.plancontent{
+color:#000000;
+padding:1%;
+}
+
+.planbox{
+border:2px solid;
+}
+
+.planbox_header{
+border-bottom:2px solid;
+}
+
+.danger-color{
+   color: #FF0000;
+}

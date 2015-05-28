@@ -1,0 +1,56 @@
+
+ =======Study Results File Upload:============
+ File Name:C:\wamp\tmp\phpBBCB.tmp 
+
+ Time:2015-01-07 04:09:49
+ =============================================
+
+ =======Study Results File Upload:============
+ File Name: 
+
+ Time:2015-01-07 04:14:23
+ =============================================
+
+ =======Study Results File Upload:============
+ File Name:C:\wamp\tmp\php5A8A.tmp 
+
+ Time:2015-01-07 04:17:03
+ =============================================
+
+ =======Study Results File Upload:============
+ File Name:C:\wamp\tmp\php2BFD.tmp 
+
+ Time:2015-01-07 04:17:57
+ =============================================
+
+8374287 - lipids_study - Successfully uploaded 
+
+8374287 - glucose_results - Successfully uploaded 
+
+8374287 - random_questionnaire - Successfully uploaded 
+
+=====File Upload Complete=======
+
+ =======Study Results File Upload:============
+ File Name:C:\wamp\tmp\php7CFB.tmp 
+
+ Time:2015-01-07 05:09:38
+ =============================================
+
+ =======Study Results File Upload:============
+ File Name:C:\wamp\tmp\phpABE8.tmp 
+
+ Time:2015-01-07 05:14:12
+ =============================================
+
+ =======Study Results File Upload:============
+ File Name:C:\wamp\tmp\php2F4B.tmp 
+
+ Time:2015-01-07 05:14:46
+ =============================================
+
+ =======Study Results File Upload:============
+ File Name:C:\wamp\tmp\phpBE13.tmp 
+
+ Time:2015-01-07 05:20:50
+ =============================================

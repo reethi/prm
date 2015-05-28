@@ -1,0 +1,3 @@
+INSERT INTO admin (`id`, `username`, `password`, `participant_id`, `first_name`, `last_name`, `phone`, `address`, `city`, `state`, `zip`, `lipids_study`, `glucose_results`, `random_questionnaire`, `rec_status`, `created_at`, `last_login`, `created_by_session_id`, `modified_by_session_id`, `modified_time`, `user_type`, `email`) VALUES (NULL, 'Dustin', MD5('Admin123'), '0', 'Dustin', 'Yoder', '0', '1190 Willow Ave	', 'San Jose', 'CA', '123456', '', '', '', '1', '0000-00-00 00:00:00', NULL, NULL, NULL, NULL, '0', 'dustin@vendus.com');
+
+UPDATE  `dbversion` SET last_update_string ='201504012030' where id=1;

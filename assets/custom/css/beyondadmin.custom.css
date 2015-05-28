@@ -1,0 +1,666 @@
+.logoclass{
+    vertical-align: middle !important;
+    padding-left: 40px;
+    padding-top: 5px;
+}
+
+.page-body{
+    padding: 18px 20px -1px 12px !important;
+}
+
+.bg-prm {
+  background-color: #8D181B !important;
+}
+
+.yes_button{
+  background-color: #0098DB;
+  border:none;
+  border-radius: 5px;
+  color: #FFF;
+  padding: 6px 11px;
+  font-weight: bold;  
+}
+
+.yes_button:hover{
+    color: #FFF !important;
+}
+.no_button{
+    background-color:#fff;
+    border:1px solid #ddd;
+    border-radius: 5px;
+    color: #0098DB;
+    padding: 3px 15px;
+    font-weight: bold;
+}
+
+.hr_quicktools{
+    border-bottom: 2px solid;
+    border-bottom-color: #DDDDDD;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.quicktools_button_group{
+    padding-top: 12px;
+    padding-bottom: 15px;
+    padding-left: 0px !important;
+}
+.modal-prm-document .modal-dialog{
+    width:400px;
+}
+
+.modal-prm-participant .modal-dialog{
+    width:500px;
+}
+
+.modal-prm .modal-header{
+    border-bottom: 3px solid #8D181B !important;
+}
+
+.modal-prm-attendence .modal-dialog{
+    width:500px;
+}
+
+.modal-prm-attendence.in .modal-dialog {
+    margin-top: 5% !important; 
+}
+
+.modal-prm-weight .modal-dialog{
+    width:400px;
+    max-height: 80vh;
+}
+
+.modal-prm-checklist .modal-dialog{
+    width:350px;
+}
+
+.modal-prm-checklist .modal-body{
+    min-height:250px;
+}
+.modal-prm-checklist .height_modal{
+min-height: 325px !important;
+}
+.modal-prm-checklist .modal-footer{
+    text-align: center;
+    background-color: #f5f5f5 !important;
+}
+
+.modal-prm-createclass .modal-dialog{
+    width:550px;
+}
+
+.modal-footer{
+    text-align: center;
+}
+
+
+
+.transparentbutton{
+    background-color:transparent;
+    border:0px;
+    border-radius: 5px;
+    color: #0098DB;
+    padding: 3px 15px;
+    font-weight: bold;
+}
+
+#participant_success_message > .modal-dialog{
+    width: 400px;   
+}
+#participant_success_message .modal-footer{
+    text-align: right !important;    
+}
+#log_success .modal-footer{
+    text-align: right !important;    
+}
+
+#weights_success_message .modal-dialog{
+    width: 400px;   
+}
+#weights_success_message .modal-footer{
+    text-align: right !important;    
+}
+
+#attendance_success_message .modal-dialog{
+    width: 752px;   
+}
+#attendance_success_message .modal-footer{
+    text-align: right !important;    
+}
+
+#doc_success_message  .modal-dialog{
+    width: 400px;   
+}
+#doc_success_message .modal-footer{
+    text-align: right !important;    
+}
+
+#video_success_message  .modal-dialog{
+    width: 400px;   
+}
+#video_success_message .modal-footer{
+    text-align: right !important;    
+}
+
+#checklist_success_message  .modal-dialog{
+    width: 400px;   
+}
+#checklist_success_message .modal-footer{
+    text-align: right !important;    
+}
+
+#push_success_message  .modal-dialog{
+    width: 400px;   
+}
+#push_success_message .modal-footer{
+    text-align: right !important;    
+}
+
+#log_success > .modal-dialog{
+    width: 400px;   
+}
+
+.graphactive, .graphactive:focus{
+    background-color: #EEEEEE;
+}
+
+.admin_header{
+    margin-left: 15px;
+    width: 64%;
+    background:white;
+    margin-right:0px;
+    min-height:225px;
+    border-width:1px 1px 1px 1px; 
+    border-style: solid; 
+    border-color: #DDD;
+}
+
+.navbar .navbar-inner .navbar-header .navbar-account .account-area .login-area .avatar{
+    border-left: 0px !important;
+}
+
+.widget-header > .widget-subcaption{
+    float: right;
+    font-size: 11px;
+    font-weight: 400 !important;
+    line-height: 34px;
+    margin: 0;
+    padding-right: 10px;
+    text-align: left;
+    color: #fff;
+}
+
+
+.cohort_header{
+    margin-left: 14px;
+    width: 97%;
+    margin-bottom: 30px;
+    background:white;
+    margin-right:0px;
+    border-width:1px 1px 1px 1px; 
+    border-style: solid; 
+    border-color: #DDD;
+}
+
+.participant_profile{
+    background:white;
+    margin-right:0px;
+    min-height:225px;
+    border-width:1px 1px 1px 1px;
+     border-style: solid; 
+     border-color: #DDD;
+     
+}
+
+.participant_id_padd{
+    background-color: white;
+    height:75px;
+     border-width:1px 1px 0px 1px; 
+     border-style: solid; 
+     border-color: #DDD;
+     padding-top: 15px;
+}
+
+.participant_id_padd1{
+
+    background-color: white;
+    height:50px;
+    border-width:1px 1px 0px 1px;
+    border-style: solid; 
+    border-color: #DDD;
+    padding-top: 15px;
+}
+
+.participant_id_padd2{
+    background-color: white;
+    height:100px;
+    border-width:1px 1px 1px 1px; 
+    border-style: solid; 
+    border-color: #DDD;
+    padding-top: 35px;
+}
+
+.participant_id_padd3{
+    background-color: white;
+    height:100px; 
+    border-width:1px 1px 1px 1px; 
+    border-style: solid; 
+    border-color: #DDD;
+    padding-top: 30px;
+}
+
+.upcoming_appointments{
+    color: #0098db;
+    font-weight: bold;
+}
+
+@media (min-width: 1200px){
+    .video_div_pad{
+        padding-left:0px !important;
+        padding-right:0px !important;
+    }
+    .unread{
+        padding-left: 0px !important;
+        margin-left: -10px !important;
+        padding-right: 37px;
+    }
+    .icon_padd{
+        padding-left:30px;
+    }
+    .video_time{
+        margin-right:10px;
+    }
+    .participant_profile{
+        margin-left: 15px;
+        width: 63.667%;
+    }
+    .quick_tools{
+        margin-left:46px !important;
+    }
+}
+
+.video_div_pad{
+    padding-top:10px;
+}
+
+.video_image{
+    width:30px;
+}
+.checklistgriids{
+    background-color: rgba(220, 220, 220, 0.23);
+    
+}
+.arrow-left {
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent; 
+	border-right:25px solid blue; 
+}
+
+
+.a-color{
+    color:#0098DB !important;
+}
+
+.editprofile_admin{
+    padding-top:160px;padding-bottom: 10px;
+}
+
+.profile_email{
+    margin-top: -3px;width:20px;
+}
+
+.close1{
+    border: none;
+    font-size: 30px;
+    font-weight: bold;
+    background: none;
+    margin-top: -10px;
+}
+.close {
+    border: medium none;
+    font-size: 18px;
+    font-weight: bold;
+    color:#000 !important;
+    background-color: #F5F5F5;
+}
+
+.phone_accordion_toggle{
+    border-bottom:0px;
+    background-color:#fff !important;
+    border-bottom-right-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+}
+
+.glyphicon-play{
+    cursor:pointer;
+}
+
+.video_widget_main{
+    overflow-y: scroll;
+    padding-right: 14px;
+    max-height: 250px;
+}
+
+.video_pdf{
+    width:20px;
+}
+
+
+/* Accordion Blocks */
+
+#accordion, #accordion_old{
+    border:0px !important;
+}
+
+#accordions{
+    border:0px !important;
+}
+
+.phone_accordion_toggle {
+    padding-bottom: 30px !important;
+    
+}
+.custom_panel_heading{
+    border-top-left-radius: 8px !important;
+    border-top-right-radius: 8px !important;
+    border-top: 1px solid #ccc !important;
+    border-left: 1px solid #ccc !important;
+    border-right: 1px solid #ccc !important;
+    border-bottom-left-radius: 8px !important;
+    border-bottom-right-radius: 8px !important;
+    border-bottom: 0px solid #ccc !important;
+}
+
+.panel_body_custom{
+    border-bottom-left-radius: 8px !important;
+    border-bottom-right-radius: 8px !important;
+    border-bottom: 1px solid #ccc;
+    border-left: 1px solid #ccc !important;
+    border-right: 1px solid #ccc;
+}
+
+.accordion.panel-group .panel-heading .accordion-toggle{
+	padding-bottom: 30px;
+	padding-top: 15px;
+	background-color: #EEE;
+	border-top-right-radius: 20px;
+	border-top-left-radius: 20px;
+}
+.accordion.panel-group .panel-heading .accordion-toggle.collapsed {
+    color: #737373;
+    font-weight: normal;
+    background: none !important;
+    transition: border 0.218s ease 0s;
+    border-bottom: 1px solid #ccc;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    padding-bottom: 30px;
+    padding-top: 15px;
+}
+
+.accordion-toggle .phone_accordion_toggle{
+    border-bottom:0px;
+    background-color:#fff;
+    border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 0px;
+}
+.accordion.panel-group .panel {
+    border-radius: 15px;
+    border: 0px solid #ccc;
+    background-color: #CCC;
+    box-shadow: none;
+}
+.custom_panel1{
+    border-radius: 15px !important;
+    border: 0px solid #F00 !important;
+    box-shadow: none !important;
+    background-color: #fff !important;
+}
+.custom_panel_heading1{
+    color: #333 !important;
+    background-color: #fff !important;
+    border-color: #DDD !important;
+}
+
+
+/*******************************************************************/
+
+.table-responsive {
+    overflow:hidden;
+}
+
+.color-blue{
+    color:#0098DB;
+}
+/**************************************************/
+
+
+.widget-body {
+    background-color: #FFF;
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.3);
+    padding: 12px;
+}
+.accordion.panel-group .panel:last-child {
+    border-bottom-width: 0px;
+}
+.accordion.panel-group .panel-heading:after{
+    border-bottom: 1px solid !important;
+}
+.widget-custom{
+    overflow:hidden !important;
+	padding-right: 0px !important;
+}
+
+.body_scroll{
+    overflow-y: scroll;
+	height: 200px;
+	padding-right: 14px;
+}
+.fa-pencil-square-o{
+	font-size: 21px;
+	color: #000;
+	cursor:pointer;
+}
+
+.gray_icon{
+    color:#ccc;
+}
+
+.icon_padd{
+    padding-top:0px;
+}
+.hr_pad{
+    margin-top:5px;
+}
+
+
+.open_notes_pad{
+    padding-bottom: 10px;
+}
+
+.widget_custom {
+    box-shadow: none;
+}
+.dialog_custom{
+    padding-bottom:200px;
+    padding-left:40px !important;
+    padding-top:40px !important;
+}
+.content_custom{
+    box-shadow: 0px 0px 0px !important;
+}
+.add_note_custom{
+    padding-right:10px !important;
+    cursor:pointer;
+}
+
+@media (min-width: 768px) and (max-width: 1024px){
+	.participant_phone{
+		margin-right: 89px;
+		margin-left: -73px;
+	}
+	.participant_profile{
+		width: 96%;
+		margin-left: 14px;
+	}
+	.participant_id_padd{
+		width: 46%;
+		margin-left: 14px;
+	}
+	.participant_id_padd2{
+		width: 46%;
+		margin-left: 14px;
+	}
+}
+@media (min-width: 320px) and (max-width: 767px){
+    .modal-dialog {
+        margin:0px !important;
+    }
+    .DTTT.btn-group{
+        position: inherit !important;
+    }
+    
+    .participant_phone{
+        float: right;
+		margin-top: -11px;
+		margin-right: 56px;
+		margin-left: -30px;
+    }
+.table-responsive {
+    overflow-x:scroll;
+}
+.editprofile_admin{
+    padding-top:16px;padding-bottom: 10px;
+}
+}
+.breadcrumb{
+    color: #000 !important;
+	font-weight: 600;
+}
+.admin_padd{
+    margin-top:8px;
+}
+.navbar .navbar-inner .navbar-header .navbar-account .account-area > li .dropdown-menu.dropdown-login-area > li.dropdown-footer a {
+    color: #717171;
+    font-size: 15px;
+    font-weight: 600 !important;
+}
+.navbar .navbar-inner .navbar-header .navbar-account .account-area > li.open .dropdown-menu {
+    margin-top: -3px;
+}
+.modal-backdrop.in{
+    background-color:#000 !important;
+}
+.modal.in .modal-dialog {
+    margin-top: 10% !important;
+}
+
+
+
+.navbar .navbar-inner .navbar-header .navbar-account .account-area > li .dropdown-arrow:before {
+    background-color:transparent !important;
+}
+
+a:hover{
+    text-decoration:none !important;
+}
+
+.padpagination{
+    padding-top: 10px;
+}
+.notes-caption{
+     font-size: 13px;
+     font-weight: 400 !important;
+     color: #fff;
+}
+
+.notes-subcaption{
+    float: right;
+    font-size: 11px;
+    font-weight: 400 !important;
+    margin: 0;
+    text-align: left;
+    color: #fff;
+}
+
+.notes-close{
+    float: right;
+    font-size: 11px;
+    font-weight: 400 !important;
+    margin: 0;
+    padding-right: 10px;
+    padding-left: 20px;
+    text-align: left;
+    color: #fff;
+}
+
+.modal-open[style] {
+    padding-right: 0px !important;
+}
+.triangle{
+    border-right:solid 15px #D0D0D0;
+   /*  border-left: solid 5px transparent;   */  
+    border-top: solid 10px transparent;
+    border-bottom: solid 10px transparent;
+    position:absolute;
+    width: 0;
+    height: 0;
+    top: 30px;
+    right:00px
+}
+.wizard ul li.active{
+    color:#8D181B !important;
+} 
+
+.wizard ul li.active:before{
+    background-color: #FFF !important;
+    content: none;
+    color:#8D181B !important;
+}
+
+.wizard ul li.complete:before{
+    background-color: #FFF !important;
+}
+
+.videolink{
+    text-decoration: none !important;
+    color:#444444;
+}
+
+.videolink:hover,.videolink:focus{
+    text-decoration: none !important;
+    color:#444444;
+}
+
+.videoModal .modal-content{
+    background-color:#4A4A4A !important;
+    color:#fff !important;
+}
+.videoModal .modal-body{
+    padding:0px  !important;
+    border:0px  !important;
+}
+
+.videoModal  .close{
+    color: #FFF  !important;
+    padding: 5px 10px 0 0 !important;
+}
+
+
+#videoModal > .modal-dialog{
+    width: 850px !important;
+}
+
+.removescroll{
+    overflow: hidden;
+    position: fixed;
+}
+
+.addscroll{
+    overflow: scroll;
+    position: static;
+}
+
+.clsDatePicker {
+    z-index: 100000;
+}
