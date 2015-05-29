@@ -56,6 +56,7 @@ else{
         
 }
 </script>
+<?php //print_r($videos); exit; ?> 
 
 <div class="col-lg-12 col-md-10 col-sm-12 col-xs-12">&nbsp;</div>
 <div class="col-lg-1 col-md-10 col-sm-12 col-xs-12">&nbsp;</div>
@@ -76,7 +77,7 @@ else{
                         <input type="text" class="input-sm col-md-6">
                         <i class="glyphicon glyphicon-search blue"></i>
                     </span>
-                    <?php if(isset($videos) && count($videos)>0){ $j=1;for($i = 0;$i < count($videos); $i++){ $j++; ?>
+                    <?php if(isset($videos) && $videos!=0){ $j=1;for($i = 0;$i < count($videos); $i++){ $j++; ?>
                      <?php $video_file='uploads/videos/'. $videos[$i]->file_name;
                       $duration=getDuration($video_file); ?>
                     <div class="col-md-12 col-sm-12 col-xs-12 video_div_pad">

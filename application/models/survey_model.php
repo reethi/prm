@@ -805,7 +805,7 @@ public function getGoalsGrid($request,$user_data)
               	if($ret[$i]->push_users_date<=date("Y-m-d"))
               		return $ret;
               	else{
-        		return '';          	
+        		return 0;          	
               }
               }
               
