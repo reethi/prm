@@ -28,7 +28,9 @@ class Myparticipants extends CI_Controller
         $data['docs'] = $this->survey_model->getDocs();
         $where_participantdetails=array('user_type' => '0');
         $data['participant_details']= $this->user->getParticipantsDetails('users','*',$where_participantdetails);
-        //print_r($data['participant_details']);exit;
+         $where_participantdetails=array('users.user_type' => '0');
+        $data['myparticipants_details']= $this->user->myparticipants_details('users users','users.*,c.class_name',$where_participantdetails);
+       // print_r($data['myparticipants_details']);exit;
         $data['class_details']= $this->user->getClassDetails('class_names');
         $where=array('user_type' => '2');
         $data['health_educator']= $this->user->getClassDetails('users',$where); 

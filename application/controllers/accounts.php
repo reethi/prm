@@ -35,10 +35,10 @@ class Accounts extends CI_Controller {
                 if($admin==1){
                     redirect(base_url().'index.php/admin/dashboard/index');
                     exit();
-                }else if($admin==0){
+                }else if($admin==2){
                     redirect(base_url().'index.php/participant/landing/index');
                     exit();
-                }else if($admin==2){
+                }else if($admin==0){
                     $this->session->set_userdata('invalid','* Login error, please try again. * ');
                     redirect_to(base_url().'index.php/welcome/index');
                 }

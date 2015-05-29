@@ -21,51 +21,19 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <?php foreach ($class_info as $key => $value) {?>
                         <tr>
                             <td class="blue">
-                               <a href="<?php echo base_url(); ?>index.php/admin/cohort" class="a-color"> Cohort 1A</a>
+                               <a href="<?php echo base_url(); ?>index.php/admin/cohort?classid=<?php echo $value->classid;?>" class="a-color"> <?php echo $value->class_name;?></a>
                             </td>
                             <td>
-                                Monday @ 3:00pm
+                                <?php echo $value->class_time_name;?>
                             </td>
                             <td class="center ">
-                                33
+                                <?php echo $value->particiant_count;?>
                             </td>
                         </tr>
-                        <tr>
-                            <td>
-                                <a href="<?php echo base_url(); ?>index.php/admin/cohort" class="a-color">Cohort 1B</a>
-                            </td>
-                            <td>
-                                Tuesday @ 3:00pm
-                            </td>
-                            <td class="center ">
-                                43
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <a href="<?php echo base_url(); ?>index.php/admin/cohort" class="a-color">Cohort 1C</a>
-                            </td>
-                            <td>
-                                Wednesday @ 3:00pm
-                            </td>
-                            <td class="center ">
-                                77
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                               <a href="<?php echo base_url(); ?>index.php/admin/cohort" class="a-color"> Cohort 2A</a>
-                            </td>
-                            <td>
-                                Monday @ 3:00pm
-                            </td>
-                            <td class="center ">
-                                33
-                            </td>
-                        </tr>
-
+                        <?php } ?>
                     </tbody>
                 </table>
             </div>

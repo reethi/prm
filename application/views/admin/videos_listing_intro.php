@@ -6,7 +6,6 @@
         </li>
     </ul>
 </div>
-    <?php echo $class_participants;?>
     <?php echo $quicktools_weight;?>
     <?php echo $quicktools_attendance;?>
     <?php echo $quicktools_doc;?>

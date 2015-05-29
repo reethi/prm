@@ -2,7 +2,7 @@
     <ul class="breadcrumb">
         <li class="active">
             <i class="fa fa-home"></i>
-            <!--a href="#"-->&nbsp;<a href="<?php echo base_url(); ?>index.php/admin/dashboard/index" class="a-color">Administrator Dashboard</a> / Cohort 1A<!--/a-->
+            <!--a href="#"-->&nbsp;<a href="<?php echo base_url(); ?>index.php/admin/dashboard/index" class="a-color">Administrator Dashboard</a> / <?php echo $class_info->class_name;?><!--/a-->
         </li>
     </ul>
 </div>

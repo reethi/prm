@@ -26,7 +26,7 @@ class Dashboard extends CI_Controller
         $data['action']="dashboard";
         $email = $this->session->userdata('email');
         $admin['values']= $this->user->getUserByEmail($email);
-       
+       $loggedinuserid = $admin['values']->id;
         $admin['editlink'] = 1;
         $where_participantdetails=array('user_type' => '2');
         
@@ -36,8 +36,9 @@ class Dashboard extends CI_Controller
         $data['class_details']= $this->user->getClassDetails('class_names');
         $where=array('file_type' => 'video/mp4');
         $data['videos'] = $this->survey_model->getVideos($where);
-        $where=array('file_type' => 'application/pdf');  
-        $data['docs'] = $this->survey_model->getDocs($where);
+        //print_r($data['videos']);exit;
+        $where_docs=array('file_type' => 'application/pdf');  
+        $data['docs'] = $this->survey_model->getDocs($where_docs);
         $class['health_educator'] = $this->classes_model->getEducatorsList();
         $class['locations'] = $this->classes_model->getLocationList();
         $class['diets'] = $this->classes_model->getDietList();
@@ -55,8 +56,11 @@ class Dashboard extends CI_Controller
         $data['quicktools_push'] = $this->load->view('admin/quicktools_push',$data,true);
         
         $data['classdata'] = $this->load->view('admin/classdata','',true);
-        $data['classlist'] = $this->load->view('admin/classlist','',true);
-        $data['participantslist'] = $this->load->view('admin/participantslist','',true);
+       $assign_class['class_info'] = $this->classes_model->getClassListbyHealthEducator($loggedinuserid);
+        $data['classlist'] = $this->load->view('admin/classlist',$assign_class,true);
+        
+        $participant_list['participant_info'] = $this->classes_model->getParticiantsListbyHealthEducator($loggedinuserid);
+        $data['participantslist'] = $this->load->view('admin/participantslist',$participant_list,true);
         $data['create_checklist'] = $this->load->view('admin/create_checklist','',true);
 
         $data['create_class'] = $this->load->view('admin/create_class',$class,true);
@@ -74,7 +78,7 @@ class Dashboard extends CI_Controller
         $admin['classes'] = $this->classes_model->getClassById($admin['values']->id);
                 
         $data['adminprofile'] = $this->load->view('admin/adminprofile',$admin,true);
-
+    
         $data['quicktools_doc'] = $this->load->view('admin/quicktools_doc','',true);
         $data['quicktools_video'] = $this->load->view('admin/quicktools_video','',true);
         $data['quicktools_weight'] = $this->load->view('admin/quicktools_weight','',true);
@@ -288,16 +292,23 @@ class Dashboard extends CI_Controller
         render_with_layout('admin/dashboard',$data,'newadmin');
 
     }
-    public function push_data(){        
-        $data['videos'] = $this->survey_model->push_data();     
+    public function push_data(){  
+    //echo 'hiiii';exit;      
+        $data=$_POST;
+        //print_r($data);exit;
+        if(isset($data['video_file']) && strlen($data['video_file'])>0)
+        {
+            $data['doc_file']=$data['video_file'];
+        }
+        $result = $this->survey_model->push_data($data);     
         if($result = 1){        
                    
-                $redirect = base_url().'index.php/admin/dashboard/alert/push_success'; 
+                $redirect = base_url().'index.php/admin/dashboard/index/push_success'; 
                 header('Location: ' . filter_var($redirect, FILTER_SANITIZE_URL));      
                     exit;       
             }       
             else{       
-                $redirect = base_url().'index.php/admin/dashboard/alert/push_failure'; 
+                $redirect = base_url().'index.php/admin/dashboard/index/push_failure'; 
                 header('Location: ' . filter_var($redirect, FILTER_SANITIZE_URL));      
                     exit;       
             }       
@@ -308,7 +319,7 @@ public function upload() {
     $allowedExts = array("jpg", "jpeg", "gif", "png", "mp3", "mp4", "wma");
     $extension = pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
 
-    if (($_FILES["file"]["type"] == "video/mp4") && ($_FILES["file"]["size"] < 20000000)
+    if (($_FILES["file"]["type"] == "video/mp4")
         && in_array($extension, $allowedExts))  {
           if ($_FILES["file"]["error"] > 0) {
             $redirect = base_url().'index.php/admin/dashboard/get_video_lists/video_failure';
@@ -447,7 +458,7 @@ public function videoUploadEdit(){
     $allowedExts = array("jpg", "jpeg", "gif", "png", "mp3", "mp4", "wma");
     $extension = pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
 
-    if (($_FILES["file"]["type"] == "video/mp4") && ($_FILES["file"]["size"] < 20000000)
+    if (($_FILES["file"]["type"] == "video/mp4")
         && in_array($extension, $allowedExts))  {
           if ($_FILES["file"]["error"] > 0) {
             $redirect = base_url().'index.php/admin/dashboard/alert/video_failure';
@@ -575,7 +586,7 @@ public function videoUploadEdit(){
         $data['create_checklist'] = $this->load->view('admin/create_checklist','',true);
         $data['create_class'] = $this->load->view('admin/create_class',$data,true);
         
-        render_with_layout('admin/listing_intro.php',$data,'newadmin');
+        render_with_layout('admin/docs_listing_intro.php',$data,'newadmin');
         $where=array('file_type' => 'application/pdf');  
         $data['result'] = $this->survey_model->getDocs($where);
        // $ret['result']=$this->survey_model->getDocs();
@@ -613,7 +624,7 @@ public function videoUploadEdit(){
         $data['create_checklist'] = $this->load->view('admin/create_checklist','',true);
         $data['create_class'] = $this->load->view('admin/create_class',$data,true);
         
-        render_with_layout('admin/listing_intro.php',$data,'newadmin');
+        render_with_layout('admin/videos_listing_intro.php',$data,'newadmin');
         $where=array('file_type' => 'video/mp4');
         $data['result'] = $this->survey_model->getVideos($where);
        // $ret['result']=$this->survey_model->getVideos();
@@ -704,7 +715,7 @@ public function videoUploadEdit(){
         if($result==1)
         {
             $this->session->set_userdata('edit_docs',$data['result']);
-                $redirect = base_url().'index.php/admin/dashboard/get_doc_lists';
+                $redirect = base_url().'index.php/admin/dashboard/get_doc_lists/doc_delete_success';
                  header('Location: ' . filter_var($redirect, FILTER_SANITIZE_URL));
                     exit; 
         }
@@ -721,7 +732,7 @@ public function videoUploadEdit(){
         if($result==1)
         {
             $this->session->set_userdata('edit_videos',$data['result']);
-                $redirect = base_url().'index.php/admin/dashboard/get_video_lists';
+                $redirect = base_url().'index.php/admin/dashboard/get_video_lists/video_delete_success';
                  header('Location: ' . filter_var($redirect, FILTER_SANITIZE_URL));
                     exit; 
         }

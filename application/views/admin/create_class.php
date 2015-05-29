@@ -61,7 +61,7 @@
                                 <select id="class_health_educator" name="class_health_educator" class="form-control">
                                     <option value="">--Select--</option>
                                <?php foreach ($health_educator as $key => $value) { ?>
-                                   <option value="<?php echo $value->id; ?>"><?php echo $value->full_name; ?> </option>
+                                   <option value="<?php echo $value->id; ?>"><?php echo $value->username; ?> </option>
                                 <?php } ?>
                                 
                                 </select>

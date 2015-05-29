@@ -8,6 +8,7 @@ class Cohort extends CI_Controller
         $this->load->model("user");
         $this->load->model("survey_model");
         $this->load->library("session");
+        $this->load->model("classes_model");
         $this->load->helper(array('form', 'url','app'));
         $this->load->library('form_validation');
         
@@ -24,7 +25,15 @@ class Cohort extends CI_Controller
         $data['action']="class";
         $data['videos'] = $this->survey_model->getVideos();  
         $data['docs'] = $this->survey_model->getDocs();
-        $where_participantdetails=array('user_type' => '0');
+        $classid = $this->input->get('classid');
+        //echo "hi";print_r($classid);exit;
+        $userid  = $this->session->userdata['user_id'];
+        $user_class_check = $this->classes_model->isUserClass($classid,$userid);
+       /* if(!$user_class_check){
+          redirect(base_url().'index.php/admin/dashboard/index'); 
+        } */
+
+        $where_participantdetails=array('user_type' => '2');
         $data['participant_details']= $this->user->getParticipantsDetails('users','*',$where_participantdetails);
         //echo "<pre>";print_r($data);exit;
         $data['class_details']= $this->user->getClassDetails('class_names');$where=array('user_type' => '2');
@@ -33,6 +42,7 @@ class Cohort extends CI_Controller
         $data['color']= $this->user->getClassDetails('color');
         $data['class_time']= $this->user->getClassDetails('class_time');
         $data['location']= $this->user->getClassDetails('location');
+        $data['class_info'] = $this->classes_model->getClassInfoById($classid);
         $data['classblock'] = $this->load->view('admin/classblock',$data,true);
         $data['quicktools_participant'] = $this->load->view('admin/quicktools_participant','',true);
         $data['quicktools_weight'] = $this->load->view('admin/quicktools_weight','',true);
@@ -48,25 +58,35 @@ class Cohort extends CI_Controller
     }
     public function participant()
     {
-      $data['login'] = $this->input->get('login');
+      $participantid = $this->input->get('participantid');
       $data['title']="Check List";
       $data['action']="participants";
+      $classid = $this->input->get('classid');    
+        $userid  = $this->session->userdata['user_id'];   
+        $particiantinfo = $this->classes_model->getParticiantsListbyHealthEducator($userid,$participantid);   
+       /* if(count($particiantinfo) == 0){    
+            redirect(base_url().'index.php/admin/dashboard/index');     
+        } */  
+      
+        //$data['participants'] = $particiantinfo[0];   
+        //echo "<pre>";print_r($data['participants']);exit;   
+        //$data['participant_docs']=$this->session->userdata('participant_details');
       //echo "<pre>";print_r($data['participant_docs']);exit;
       $data['participant_docs']=$this->session->userdata('participant_details');
      // echo "<pre>";print_r($data['participant_docs']);exit;
       //$where=array('user_id' => $data['participant_docs'][0]['id']);
      // print_r($this->session->all_userdata());exit;
        $where=array('user_id' => $data['participant_docs'][0]['id']);
-      $where1=array('user_id' => $data['participant_docs'][0]['id'], 'file_type' => 'application/pdf');
-      $where2=array('user_id' => $data['participant_docs'][0]['id'], 'file_type' => 'video/mp4');
+      $where1=array('u.id' => $data['participant_docs'][0]['id'], 'f.file_type' => 'application/pdf');
+      $where2=array('u.id' => $data['participant_docs'][0]['id'], 'f.file_type' => 'video/mp4');
 
     // print_r($where);exit;
-       $data['videos'] = $this->survey_model->getVideos($where2);  
-        $data['docs'] = $this->survey_model->getDocs($where1);
+       $data['videos'] = $this->survey_model->getVideos_push($where2);  
+        $data['docs'] = $this->survey_model->getDocs_push($where1);
        
         //echo "<pre>";print_r($data['videos']);exit;
 
-        $data['class_details']= $this->user->getClassDetails('class_names');$where=array('user_type' => '0');
+        $data['class_details']= $this->user->getClassDetails('class_names');$where=array('user_type' => '2');
         $data['health_educator']= $this->user->getClassDetails('users',$where); 
         $data['diet']= $this->user->getClassDetails('diet');
         $data['color']= $this->user->getClassDetails('color');
@@ -101,12 +121,12 @@ class Cohort extends CI_Controller
         //print_r($_POST);
         $where_participantdetails=array('user_type' => '0',
                                         'username' => $_POST['user_name']);
-        $participant_details= $this->user->getParticipantsDetails('users','*',$where_participantdetails);
+        $participant_details= $this->user->myparticipants_details('users','*',$where_participantdetails);
         //print_r($participant_details);exit;
         $user = objectToArray($participant_details);
         //print_r($user);exit;
        
-      //echo "<pre>";print_r($user);exit;
+     // echo "<pre>";print_r($user);exit;
         $this->session->set_userdata('participant_details',$user);
         //print_r($this->session->userdata('participant_details'));exit;
         $redirect = base_url().'index.php/admin/cohort/participant';      

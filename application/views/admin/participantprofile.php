@@ -4,45 +4,45 @@
 <div class="col-lg-8 col-md-10 col-sm-12 col-xs-12 participant_profile">
     <div class="row">&nbsp;</div>
     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-    <?php if(isset($participant_docs[0]['username']) && $participant_docs[0]['username']=='Dustin Yoder')
-    { ?>
-        <img src="<?php echo base_url();?>assets/images/dustin_profile_image.png">
+    <?php if(isset($participants->profile_pic)){ ?>
+        <img src="<?php echo base_url();?>assets/images/<?php echo $participants->profile_pic;?> ">
     <?php }else{ ?>
         <img src="<?php echo base_url();?>assets/images/profile_image.png">
 <?php } ?>    </div>
-    <?php if(isset($participant_docs[0])){ 
-                   ?>
+    <?php if(isset($participants)){ ?>
     <div class="col-lg-6 col-md-6 col-sm-4 col-xs-12">
-        <div class="row"><h3><span style="font-weight: 600;"><?php echo ucfirst($participant_docs[0]['username']);?></span></h3></div>
+        <div class="row"><h3><span style="font-weight: 600;"><?php echo ucfirst($participants->username);?></span></h3></div>
         <div class="row">&nbsp;</div>
-        <div class="row"><strong>Diet:</strong> Low Fat</div>
-        <div class="row"><strong>Class:</strong> Monday's @ 2PM</div>
-        <div class="row"><strong>Health Educator:</strong> Susan Grabel[<a href="#">email</a>]</div>
+        <div class="row"><strong>Diet:</strong><?php echo $participants->diet_name; ?></div>
+        <div class="row"><strong>Class:</strong><?php echo $participants->class_time_name; ?></div>
+        <div class="row"><strong>Health Educator:</strong> <?php echo $participants->healtheducator; ?>[<a href="#"><?php echo $participants->healtheducator_email; ?></a>]</div>
     </div>
     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12 details-edit text-right open_notes_pad">
         <a id="open_notes_list" data-toggle="modal" data-target=".bs-example-modal-sm"><i class="menu-icon fa fa-pencil-square-o"></i></a>
     </div>
 </div>
 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 text-center participant_id_padd">
-    <h4><span style="font-weight:600;">Participant ID: 24143252</strong></h4>
+    <h4><span style="font-weight:600;">Participant ID: <?php echo $participants->participant_id; ?></strong></h4>
 </div>
 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 text-center participant_id_padd1">
     <i class="glyphicon glyphicon-map-marker"></i> 
     <span style="color:#000;">
-        <?php if(strlen($participant_docs[0]['address'])!=''){ 
-            $address=$participant_docs[0]['address'] . "," . $participant_docs[0]['street'] . "" . $participant_docs[0]['city'] . "," . $participant_docs[0]['state'];
+        <?php if(strlen($participants->address)!=''){ 
+            $address=$participants->address . "," . $participants->street . "" . $participants->city . "," . $participants->state;
             echo $address; 
         } else{
-           echo 'No Data Available'; } ?></span>
+           echo 'No Data Available'; 
+        } ?>
+    </span>
 </div>
 <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12  text-center participant_id_padd2">
     <i class="glyphicon glyphicon-earphone" style="color:#000;font-size: 16px;float: left;margin-left: -12px;"></i>&nbsp;
     <div><span style="float: right;margin-top: -30px;" class="participant_phone">
             <b>Home</b>&nbsp;&nbsp;&nbsp;
                 <span style="color:#000;">
-                    <?php if(strlen($participant_docs[0]['home_phone']))
+                    <?php if(strlen($participants->home_phone))
                             { 
-                                echo $participant_docs[0]['home_phone'];
+                                echo $participants->home_phone;
                             } 
                             else
                             {
@@ -51,9 +51,9 @@
                 </span><br>
             <b style="margin-left: 0px;">&nbsp;Work</b>&nbsp;&nbsp;&nbsp;&nbsp;
                 <span style="color:#000;">
-                    <?php if(strlen($participant_docs[0]['work_phone']))
+                    <?php if(strlen($participants->work_phone))
                             {
-                                echo $participant_docs[0]['work_phone'];
+                                echo $participants->work_phone;
                             }
                             else
                             {
@@ -62,9 +62,9 @@
                 </span><br>
             <b style="margin-left: -10px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cell</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <span style="color:#000;">
-                    <?php if(strlen($participant_docs[0]['work_phone']))
+                    <?php if(strlen($participants->work_phone))
                             {
-                                echo $participant_docs[0]['cell_phone'];
+                                echo $participants->cell_phone;
                             }
                             else
                             {
@@ -78,13 +78,15 @@
     <i class="glyphicon glyphicon-envelope" style="color:#000;font-size: 13px;top:3px;"></i>&nbsp;
     <span class="menu-text" style="color:#0098DB;word-wrap:break-word;">
 
-    <?php if(strlen($participant_docs[0]['email']))
+    <?php if(strlen($participants->email))
                             {
-                                echo $participant_docs[0]['email'];  }
+                                echo $participants->email;  
+                            }
                             else
                             {
                                 echo "No Data Available";
-                            } ?></span>
+                            } 
+                            ?></span>
 </div>
 
    <?php }  else{ 

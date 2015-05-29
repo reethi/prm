@@ -13,7 +13,7 @@
 }
 }
 </style>
-<?php //echo "hi";echo"<pre>";print_r($participant_details);exit; ?>
+<?php //echo "hi";echo"<pre>";print_r($myparticipants_details);exit; ?>
 <!-- Data Grid -->
 <script src="<?php echo base_url();?>assets/custom/js/beyondadmin.custom.js"></script>
 <link href="<?php echo base_url();?>assets/beyondadmin/css/dataTables.bootstrap.css" rel="stylesheet" />
@@ -93,39 +93,39 @@
                     
                     </tbody> -->
                     <tbody>
-                    <?php if(isset($participant_details)){ for($i=0;$i<count($participant_details);$i++) { ?>
+                    <?php if(isset($myparticipants_details)){ for($i=0;$i<count($myparticipants_details);$i++) { ?>
                       <tr >
                             <td class="blue col-md-2">
                             <form action="<?php echo base_url();?>index.php/admin/cohort/checklist" method="post">
-                                <input type="submit" class="a-color"style="background: none;border: none;" value="<?php echo ucfirst($participant_details[$i]->username); ?>">
-                                <input type="hidden" name="user_name" value="<?php echo $participant_details[$i]->username;?>">
+                                <input type="submit" class="a-color"style="background: none;border: none;" value="<?php echo ucfirst($myparticipants_details[$i]->username); ?>">
+                                <input type="hidden" name="user_name" value="<?php echo $myparticipants_details[$i]->username;?>">
                             </form>
                             </td>
                             <td class="col-md-1">
-                                <?php echo ucfirst($participant_details[$i]->nickname); ?>
+                                <?php echo ucfirst($myparticipants_details[$i]->nickname); ?>
                             </td>
                             <td class="col-md-1">
-                                <?php if($participant_details[$i]->class!=0){ ?>
-                                     <?php echo $participant_details[$i]->class_name; ?>
+                                <?php if($myparticipants_details[$i]->class!=0){ ?>
+                                     <?php echo $myparticipants_details[$i]->class_name; ?>
                                     <?php } ?>
                             </td>
                             <td class="col-md-2">
-                                <?php if($participant_details[$i]->date_of_birth) echo date("d M, Y",strtotime($participant_details[$i]->date_of_birth));?>
+                                <?php if($myparticipants_details[$i]->date_of_birth) echo date("d M, Y",strtotime($myparticipants_details[$i]->date_of_birth));?>
                             </td>
                             <td class="col-md-1">
-                                <?php if($participant_details[$i]->gender == 'm') echo "Male"; elseif($participant_details[$i]->gender=='f') echo "Female"; ?>
+                                <?php if($myparticipants_details[$i]->gender == 'm') echo "Male"; elseif($myparticipants_details[$i]->gender=='f') echo "Female"; ?>
                             </td>
                             <td class="col-md-2">
-                               <?php echo $participant_details[$i]->email; ?>
+                               <?php echo $myparticipants_details[$i]->email; ?>
                             </td>
                             <td class="col-md-2">
-                               <?php echo $participant_details[$i]->home_phone; ?>
+                               <?php echo $myparticipants_details[$i]->home_phone; ?>
                             </td>
                             <td class="col-md-2">
-                               <?php echo $participant_details[$i]->work_phone; ?>
+                               <?php echo $myparticipants_details[$i]->work_phone; ?>
                             </td>
                             <td class="col-md-2">
-                               <?php echo $participant_details[$i]->cell_phone; ?>
+                               <?php echo $myparticipants_details[$i]->cell_phone; ?>
                             </td>
                         </tr>
                     <?php }  } ?>

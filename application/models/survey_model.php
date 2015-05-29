@@ -787,6 +787,30 @@ public function getGoalsGrid($request,$user_data)
         return $ret;          	
   	
  }		
+ public function getVideos_push($where=array()){	
+ 	//print_r($where);exit;
+  		$this->db->select('f.*,p.push_users_date');
+        $this->db->from('users u');
+        $this->db->join('push_participants p','p.class_id=u.class');
+        $this->db->join('upload_files f','p.file_id=f.id');
+        //$this->db->join('users u','u.id='.$where["user_id"]);
+        if(count($where) > 0)
+        	$this->db->where($where);
+        $query = $this->db->get();
+       // echo $this->db->last_query();exit; 
+        $ret = $query->result();
+             // echo "<pre>";  print_r($ret);exit;
+              for($i=0;$i<count($ret);$i++)
+              {
+              	if($ret[$i]->push_users_date<=date("Y-m-d"))
+              		return $ret;
+              	else{
+        		return '';          	
+              }
+              }
+              
+  	
+ }		
  public function getDocs($where=array()){		
  	$this->db->select('*');
         $this->db->from('upload_files');
@@ -795,21 +819,54 @@ public function getGoalsGrid($request,$user_data)
         $ret = $query->result();
         return $ret;      		
  }		
- public function push_data(){		
- 	$video_type = $this->input->post('video_type');		
-	$class_push = $this->input->post('class_push');		
-	$file_name = $this->input->post('doc_file');		
-	$where = $this->input->post('class_push');		
-			
-	$sql="update users set video_type = '".$video_type."',file_name = '".$file_name."' where class = '".$class_push."'";		
-	 $result = $this->db->query($sql);		
-	 //echo $this->db->last_query();exit;		
-	 if(!$result){		
+ public function getDocs_push($where=array()){		
+ 	$this->db->select('f.*');
+        $this->db->from('users u');
+        $this->db->join('push_participants p','p.class_id=u.class');
+        $this->db->join('upload_files f','p.file_id=f.id');
+        //$this->db->join('users u','u.id='.$where["user_id"]);
+        if(count($where) > 0)
+        	$this->db->where($where);
+        $query = $this->db->get();
+        //echo $this->db->last_query();exit; 
+        $ret = $query->result();
+        return $ret;          	  		
+ }		
+ public function push_data($data){		
+ 				//print_r($data);exit;
+	 $query = $this->db->get_where('push_participants', array(		
+	       	'class_id' => $data['class_to_push'],
+	       	'file_id' => $data['doc_file']
+        ));		
+	    //echo $this->db->last_query();exit;		
+	    $count = $query->num_rows(); //counting result from query		
+	    if ($count === 0) {		
+	    	$data1=array(		
+	    	'file_id' => $data['doc_file'], 		
+	       	'file_type' => $data['media_type'],
+	       	'push_users_date' => $data['date'],	
+	       	'class_id' => $data['class_to_push']		
+	    );		
+	    $result = $this->db->insert('push_participants', $data1);
+	     if(!$result){		
 		   		return false;		
 		   	}		
 		   else{		
 		   		return true;		
+			}				
+	}		
+	    else{		
+		//echo 'else';exit;		
+		$sql="update push_participants set file_type = '".$data['media_type']."', file_id = '".$data['doc_file']."',push_users_date = '".$data['date']."' where class_id = '".$data['class_to_push']."'";		
+	 	$result = $this->db->query($sql);	
+	 		if(!$result){		
+		   		return false;		
+		   	}		
+		   else{		
+		   		return 'updated';		
 			}		
+	 	//echo $this->db->last_query();exit;		
+	}			
  }		
 public function save_files($data){		
 	    //print_r($data);exit;		

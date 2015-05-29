@@ -437,6 +437,17 @@ class User extends CI_model {
         $ret = $query->result();
         return $ret;             
     }
+    public function myparticipants_details($table,$columns,$where)
+    {
+        $this->db->select($columns);
+        $this->db->from($table);
+        $this->db->join('class_names c', 'users.class = c.id');
+        $this->db->where($where);
+
+        $query = $this->db->get();
+        $ret = $query->result();
+        return $ret;             
+    }
     public function getParticipantsList($where){
         $this->db->select('*');
         $this->db->from('users');

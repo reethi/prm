@@ -46,6 +46,9 @@ td{
      else if( $this->uri->segment(4) == 'doc_edit_success') {
         echo '<script>$(document).ready(function(){ $("#edit_doc_list_success").modal("show"); });</script>';
     } 
+    else if( $this->uri->segment(4) == 'doc_delete_success') {
+        echo '<script>$(document).ready(function(){ $("#doc_delete_success").modal("show"); });</script>';
+    } 
     $data=$this->session->userdata('edit_docs');
     //print_r($data);
 ?>
@@ -55,7 +58,7 @@ td{
 <div class="page-content">
     <div class="page-body">
     <div class="col-lg-12 col-md-10 col-sm-12 col-xs-12">
-        <div class="widget"style="margin-top:-20%;min-height:400px;">
+        <div class="widget"style="min-height:400px;">
              <div class="widget-header bg-prm">
                 <span class="widget-caption"><strong>Document List</strong></span>
                 <span class="widget-subcaption" id="add_submit_weight" style="cursor: pointer;">
@@ -96,21 +99,24 @@ td{
                                 <td class="col-md-3">
                                     <?php echo ucfirst($result[$i]->file_name); ?>
                                 </td>
-                                <td class="col-md-3"> 
+                                <td class="col-md-2"> 
                                     <?php echo ucfirst($result[$i]->class); ?>
                                 </td>
-                                <td class="col-md-4">
-                                <div class="col-lg-12">
-                                    <form action="<?php echo base_url(); ?>index.php/admin/dashboard/edit_docs" class="col-lg-6" method="post">
+                                <td class="col-md-3">
+                                    <a target="_blank" href="<?php echo base_url()?>uploads/docs/<?php echo $result[$i]->file_name?>"class="col-lg-3 yes_button">
+                                        View
+                                    </a>
+                                    <form action="<?php echo base_url(); ?>index.php/admin/dashboard/edit_docs" class="col-lg-3" method="post">
                                         <input type="hidden" name="id" value="<?php echo $result[$i]->id; ?>">
                                         <input type="submit" class=" yes_button" value="Edit">
-                                   </form>
-                                   <form action="<?php echo base_url(); ?>index.php/admin/dashboard/delete_docs" class="col-lg-6" method="post">
+                                    </form>
+                                    <form action="<?php echo base_url(); ?>index.php/admin/dashboard/delete_docs" class="col-lg-3" method="post">
                                         <input type="hidden" name="id" value="<?php echo $result[$i]->id; ?>">
-                                        <input type="submit" class="btn yes_button" style="background-color:#8D181B !important;" value="X">
-                                   </form>
-                                   
-                                </div>
+                                        <input type="submit" class="yes_button" style="background-color:#8D181B !important;margin-left:5px;" value="X">
+                                    </form>
+                                    <a download href="<?php echo base_url()?>uploads/docs/<?php echo $result[$i]->file_name?>"class="col-lg-2 yes_button"style="margin-left: 10px;padding: 8px 11px 9px;">
+                                        <span class="glyphicon glyphicon-download-alt pull-right"></span>
+                                    </a>
                                 </td>
                             </tr>
                         <?php } ?>
@@ -290,7 +296,7 @@ td{
 
               <center>  <input type="button" name="" value="No"class="transparentbutton js-modal-close" data-dismiss="modal">
                     <input type="hidden" name="id" value="<?php echo $data[0]->id; ?>">
-                    <input type="submit" class="btn yes_button" value="Yes"> </center>
+                    <input type="submit" class="yes_button" value="Yes"> </center>
                 </form>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
@@ -308,6 +314,26 @@ td{
             </div>
             <div class="modal-body">
                 <p>Document can't be deleted.</p>
+            </div>
+            <div class="modal-footer">
+                <a href="<?php echo base_url(); ?>index.php/admin/dashboard/get_doc_lists" class="btn btn-default no_button">OK</a>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+
+    </div>
+    <div id="doc_delete_success" class="modal fade modal-prm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">
+                    Successfully Deleted
+                </h4>
+            </div>
+            <div class="modal-body">
+                <p>Document deleted Succesfully.</p>
             </div>
             <div class="modal-footer">
                 <a href="<?php echo base_url(); ?>index.php/admin/dashboard/get_doc_lists" class="btn btn-default no_button">OK</a>

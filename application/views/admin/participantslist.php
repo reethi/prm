@@ -28,51 +28,21 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <?php foreach ($participant_info as $key => $value) { ?>
                         <tr>
                             <td>
-                                 <a href="" class="a-color">Dustin Yoder</a>
+                                 <a href="<?php echo base_url(); ?>index.php/admin/cohort/participant?id=<?php echo $value->userid;?>" class="a-color"><?php echo $value->username;?></a>
                             </td>
                             <td>
-                                Cohort 1A
+                                <?php echo $value->class_name;?>
                             </td>
                             <td class="center ">
-                               Low Fat
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <a href="" class="a-color">John Deo</a>
-                            </td>
-                            <td>
-                               Cohort 1B
-                            </td>
-                            <td class="center ">
-                                Low Carb
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <a href="" class="a-color">Stacey Johnson</a>
-                            </td>
-                            <td>
-                                Cohort 2A
-                            </td>
-                            <td class="center ">
-                                Low Carb
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                               <a href="" class="a-color">Yao Li</a>
-                            </td>
-                            <td>
-                                Cohort 2B
-                            </td>
-                            <td class="center ">
-                                Low Fat
+                               <?php echo $value->diet_name;?>
                             </td>
                         </tr>
 
+                        <?php } ?>
+                        
                     </tbody> 
                 </table>
             </div>

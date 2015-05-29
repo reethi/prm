@@ -3,7 +3,7 @@
     <div class="row">&nbsp;</div>
     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
     <?php if($values->profile_pic!=''){ ?>
-        <img src="<?php echo base_url();?>assets/images/<?php echo $values->profile_pic;?>" class="admin_padd">
+        <img src="<?php echo base_url();?>assets/images/<?php echo $values->profile_pic;?>" width="150" height="150" class="admin_padd">
     <?php } else { ?>
         <img src="<?php echo base_url();?>assets/images/profile_image.png" class="admin_padd">
         <?php } ?>
@@ -15,9 +15,17 @@
         <div class="row"><h3><strong><?php echo $values->full_name;?></strong></h3></div>
         <div class="row">&nbsp;</div>
         <div class="row"><strong>Admin Classes:</strong></div>
-        <?php if(isset($classes) && isset($values->class_name)) { 
-        foreach ($classes as $key => $value) { ?>
-                <div class="row"><?php if(isset($values->class_name) && $values->class_name!=''){ echo $values->class_name.':'; } ?> <?php if(isset($values->class_time_name) && $values->class_time_name!='') { echo $values->class_time_name; } ?></div>
+        <?php 
+        if(isset($classes) && isset($values->class_name)) { 
+            foreach ($classes as $key => $value) { ?>
+                <div class="row">
+                    <?php if(isset($values->class_name) && $values->class_name!=''){ 
+                        echo $values->class_name.':'; 
+                    } ?> 
+                    <?php if(isset($values->class_time_name) && $values->class_time_name!='') { 
+                        echo $values->class_time_name; 
+                    } ?>
+                </div>
             <?php
             }
         } else{ echo "No Data Available"; } ?>

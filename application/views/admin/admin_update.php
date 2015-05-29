@@ -48,7 +48,7 @@
                     <div class="col-md-4 col-sm-5">
                         <div style="padding-bottom:10px; ">
                              <?php if($values->profile_pic!=''){ ?>
-                                <img src="<?php echo base_url();?>assets/images/<?php echo $values->profile_pic;?>" class="admin_padd">
+                                <img src="<?php echo base_url();?>assets/images/<?php echo $values->profile_pic;?>" class="admin_padd" width="150" height="150">
                             <?php } else { ?>
                                 <img src="<?php echo base_url();?>assets/images/profile_image.png" class="admin_padd">
                                 <?php } ?>
